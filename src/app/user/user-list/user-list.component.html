@@ -1,0 +1,32 @@
+<div *ngIf="users.length; else noContent">
+  <table class="table  table-striped">
+    <caption>Lista de usuários cadastrados</caption>
+    <thead>
+      <tr>
+        <th scope="col">Nome</th>
+        <th scope="col">Celular/Telefone</th>
+        <th scope="col">Ação</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{user.nome}}</td>
+        <td>{{user.telefone}}</td>
+        <td>
+          <button type="button" class="btn btn-sm btn-outline-dark" title="Visualizar"
+            (click)="viewUser(user.id)">Visualizar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<ng-template #noContent>
+  <div class="alert alert-light text-center" role="alert">
+    <div>
+      <i class="bi bi-info-circle"></i>
+    </div>
+    <div>
+      Nenhum usuário para exibir
+    </div>
+  </div>
+</ng-template>

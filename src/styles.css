@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  /* From https://cssgradient.io/shades-of-blue/*/
+  /* background-color: #0a2351; */
+
+  /* https://cssgradient.io/gradient-backgrounds/ */
+  background-image: linear-gradient(96.5deg, rgba(39, 103, 187, 1) 10.4%, rgba(16, 72, 144, 1) 87.7%);
+}
+
+.bg-container {
+  background-color: rgba(255, 255, 255, 0.932);
+  padding: 0;
+  margin-top: 1.5rem;
+}
+
+.bg-glass1 {
+  padding: 0;
+  margin-top: 1.5rem;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.618);
+  border-radius: 5px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.9px);
+  -webkit-backdrop-filter: blur(7.9px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
