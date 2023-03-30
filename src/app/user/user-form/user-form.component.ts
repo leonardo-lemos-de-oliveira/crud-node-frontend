@@ -1,3 +1,4 @@
+import { UserService } from './../user.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators, FormGroup } from '@angular/forms';
 
@@ -9,17 +10,10 @@ import { FormBuilder, FormControl, Validators, FormGroup } from '@angular/forms'
 export class UserFormComponent implements OnInit {
   title: string = "Cadastrar usuário";
   form!: FormGroup;
-  // form = this.formBuilder.group(
-  //   {
-  //     nome: new FormControl('', [Validators.required]),
-  //     email: new FormControl('', [Validators.required]),
-  //     telefone: new FormControl('', [Validators.required]),
-  //     data_nascimento: new FormControl('', [Validators.required]),
-  //   }
-  // )
 
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private userService: UserService
   ) { }
 
   ngOnInit(): void {
@@ -37,7 +31,7 @@ export class UserFormComponent implements OnInit {
     if (this.form.invalid) {
       return;
     }
-    console.log(this.form.value)
+    this.userService.save(this.form.value).subscribe(data => console.log(data));
   }
 
   //FORM VALIDATION

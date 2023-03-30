@@ -15,4 +15,20 @@ export class UserService {
   getAll(): Observable<User[]> {
     return this.http.get<User[]>(this.API_USUARIOS);
   }
+
+  save(record: any) {
+    if (record.id) {
+      return this.update(record);
+    }
+    return this.create(record);
+  }
+
+  private create(record: Partial<User>) {
+    return this.http.post<User>(this.API_USUARIOS, record);
+  }
+
+  private update(record: User) {
+    return this.http.put<User>(`${this.API_USUARIOS}/${record.id}`, record);
+  }
+
 }
