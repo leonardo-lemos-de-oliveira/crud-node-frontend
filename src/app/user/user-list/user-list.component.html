@@ -14,7 +14,7 @@
         <td>{{user.telefone}}</td>
         <td>
           <button type="button" class="btn btn-sm btn-outline-dark" title="Visualizar"
-            (click)="viewUser(user.id)">Visualizar</button>
+            [routerLink]="['/usuario/' + user.id]">Visualizar</button>
         </td>
       </tr>
     </tbody>

@@ -9,34 +9,39 @@
 
       <div class="col-12 col-md-6 mb-2">
         <label for="nome">Nome</label>
-        <input type="nome" class="form-control form-control-sm" id="nome" formControlName="nome">
+        <input type="nome" class="form-control form-control-sm" id="nome" formControlName="nome"
+          [readOnly]="isReadOnly">
         <small class="text-danger" *ngIf="nome.invalid && formUser.submitted">O campo nome é obrigatório.</small>
       </div>
 
       <div class="col-12 col-md-6 mb-2">
         <label for="email">E-mail</label>
-        <input type="email" class="form-control form-control-sm" id="email" formControlName="email">
+        <input type="email" class="form-control form-control-sm" id="email" formControlName="email"
+          [readOnly]="isReadOnly">
         <small class="text-danger" *ngIf="email.invalid && formUser.submitted">O campo e-mail é
           obrigatório.</small>
       </div>
 
       <div class="col-12 col-md-6 mb-2">
         <label for="telefone">Celular/Telefone</label>
-        <input type="text" class="form-control form-control-sm" id="telefone" formControlName="telefone">
+        <input type="text" class="form-control form-control-sm" id="telefone" formControlName="telefone"
+          [readOnly]="isReadOnly">
         <small class="text-danger" *ngIf="telefone.invalid && formUser.submitted">O campo telefone é
           obrigatório.</small>
       </div>
 
       <div class="col-12 col-md-6 mb-2">
         <label for="data_nascimento">Data de nascimento</label>
-        <input type="date" class="form-control form-control-sm" id="data_nascimento" formControlName="data_nascimento">
+        <input type="date" class="form-control form-control-sm" id="data_nascimento" formControlName="data_nascimento"
+          [readOnly]="isReadOnly">
         <small class="text-danger" *ngIf="data_nascimento.invalid && formUser.submitted">
           A data de nascimento é obrigatória.
         </small>
       </div>
 
       <div class="col-12 text-right">
-        <button type="submit" class="btn btn-sm btn-dark">Enviar</button>
+        <button type="button" class="btn btn-sm btn-outline-dark mr-2" *ngIf="isReadOnly">Editar</button>
+        <button type="submit" class="btn btn-sm btn-dark" [disabled]="isReadOnly">Enviar</button>
       </div>
 
     </div>

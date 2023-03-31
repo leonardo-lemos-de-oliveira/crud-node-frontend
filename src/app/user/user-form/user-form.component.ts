@@ -11,6 +11,7 @@ import { UserService } from './../user.service';
 })
 export class UserFormComponent implements OnInit {
   @Input() title!: string;
+  @Input() isReadOnly!: boolean | string;
 
   form!: FormGroup;
   userID!: number;
@@ -43,8 +44,7 @@ export class UserFormComponent implements OnInit {
               email: data.email,
               telefone: data.telefone,
               data_nascimento: data.data_nascimento
-            }),
-            console.log(data)
+            })
           }
         );
 
