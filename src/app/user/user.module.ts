@@ -6,13 +6,15 @@ import { UserRoutingModule } from './user-routing.module';
 import { UserViewComponent } from './user-view/user-view.component';
 import { UserFormComponent } from './user-form/user-form.component';
 import { SharedModule } from '../shared/shared.module';
+import { UserAddComponent } from './user-add/user-add.component';
 
 
 @NgModule({
   declarations: [
     UserListComponent,
     UserViewComponent,
-    UserFormComponent
+    UserFormComponent,
+    UserAddComponent
   ],
   imports: [
     CommonModule,

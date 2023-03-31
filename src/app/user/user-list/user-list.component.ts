@@ -1,5 +1,5 @@
-import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Component } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { User } from '../model/model';
 import { UserService } from '../user.service';
 

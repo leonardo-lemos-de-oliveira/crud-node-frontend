@@ -1,7 +1,8 @@
-import { UserFormComponent } from './user-form/user-form.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { UserAddComponent } from './user-add/user-add.component';
 import { UserListComponent } from './user-list/user-list.component';
+import { UserViewComponent } from './user-view/user-view.component';
 
 const routes: Routes = [
   {
@@ -10,8 +11,12 @@ const routes: Routes = [
   },
   {
     path: "cadastrar-usuario",
-    component: UserFormComponent
-  }
+    component: UserAddComponent
+  },
+  {
+    path: "usuario/:id",
+    component: UserViewComponent
+  },
 ];
 
 @NgModule({

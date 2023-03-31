@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs';
+import { first, Observable } from 'rxjs';
 import { User } from './model/model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -14,6 +14,10 @@ export class UserService {
 
   getAll(): Observable<User[]> {
     return this.http.get<User[]>(this.API_USUARIOS);
+  }
+
+  getById(id: number): Observable<User> {
+    return this.http.get<User>(`${this.API_USUARIOS}/${id}`);
   }
 
   save(record: any) {
