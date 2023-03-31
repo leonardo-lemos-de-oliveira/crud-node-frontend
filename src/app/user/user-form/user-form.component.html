@@ -40,7 +40,7 @@
       </div>
 
       <div class="col-12 text-right">
-        <button type="button" class="btn btn-sm btn-outline-dark mr-2" *ngIf="isReadOnly">Editar</button>
+        <button type="button" class="btn btn-sm btn-outline-dark mr-2" *ngIf="isReadOnly" (click)="toggleEdit()">Editar</button>
         <button type="submit" class="btn btn-sm btn-dark" [disabled]="isReadOnly">Enviar</button>
       </div>
 

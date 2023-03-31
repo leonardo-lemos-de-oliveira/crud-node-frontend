@@ -58,6 +58,11 @@ export class UserFormComponent implements OnInit {
     this.userService.save(this.form.value).subscribe(data => console.log(data));
   }
 
+
+  toggleEdit() {
+    this.isReadOnly = false;
+  }
+
   //FORM VALIDATION
 
   get nome() {
